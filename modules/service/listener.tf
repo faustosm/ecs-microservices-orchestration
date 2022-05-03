@@ -8,7 +8,8 @@ resource "aws_lb_listener_rule" "service" {
   }
 
   condition {
-    field  = "path-pattern"
+    host_header {
     values = var.service_base_path
+    }
   }
 }
